@@ -1,5 +1,10 @@
 import { takeUntil, tap } from 'rxjs/operators';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { CartService } from '../../services/cart.service';
@@ -7,6 +12,7 @@ import { IProduct } from '../../../../../../shared/mocks/6-routing/products';
 @Component({
   selector: 'ngx-shop-cart',
   templateUrl: './cart.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent implements OnInit, OnDestroy {
   public disabled = false;

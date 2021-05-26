@@ -16,31 +16,26 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     fixture.detectChanges();
   });
 
-  it('компонент должен иметь метод decrementProductInCart ', () => {
+  it('компонент "shop-card" должен иметь метод decrementProductInCart ', () => {
     expect((component as any).decrementProductInCart).toBeTruthy();
   });
-  it('компонент должен иметь метод incrementProductInCart', () => {
+  it('компонент "shop-card" должен иметь метод incrementProductInCart', () => {
     expect((component as any).incrementProductInCart).toBeTruthy();
   });
-  it('компонент должен иметь свойство product c значением {}', () => {
+  it('компонент "shop-card" должен иметь свойство product c значением {}', () => {
     expect((component as any).product).toBeDefined();
   });
 
-  it('компонент должен иметь cобственное событие increment ', () => {
+  it('компонент "shop-card" должен иметь cобственное событие increment ', () => {
     expect((component as any).increment).toBeTruthy();
     expect((component as any).increment).toBeInstanceOf(EventEmitter);
   });
-  it('компонент должен иметь cобственное событие decrement ', () => {
+  it('компонент "shop-card" должен иметь cобственное событие decrement ', () => {
     expect((component as any).decrement).toBeTruthy();
     expect((component as any).decrement).toBeInstanceOf(EventEmitter);
   });
 
-  it('компонент должен иметь cобственное событие increment ', () => {
-    expect((component as any).increment).toBeTruthy();
-    expect((component as any).increment).toBeInstanceOf(EventEmitter);
-  });
-
-  it('при нажатии на кнопку с селектором .increment должен вызываться метод  incrementProductInCart и срабатывать собстевнное событие increment', () => {
+  it('при нажатии на кнопку с селектором [.increment] должен вызываться метод  incrementProductInCart и срабатывать собстевнное событие increment', () => {
     spyOn(component as any, 'incrementProductInCart').and.callThrough();
     spyOn((component as any)?.increment, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
@@ -51,7 +46,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect((component as any)?.increment.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('при нажатии на кнопку с селектором .decrement должен вызываться метод  decrementProductInCart и срабатывать собстевнное событие decrement', () => {
+  it('при нажатии на кнопку с селектором [.decrement] должен вызываться метод  decrementProductInCart и срабатывать собстевнное событие decrement', () => {
     spyOn(component as any, 'decrementProductInCart').and.callThrough();
     spyOn((component as any)?.decrement, 'emit').and.callThrough();
     const incrementButton = fixture.debugElement.query(
@@ -72,7 +67,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect(imgEl.attributes.alt).toEqual(name);
   });
 
-  it('тег с селектором .product-desc h4.col-title должен правильно интерполировать свойство name продукта', () => {
+  it('тег с селектором [.product-desc h4.col-title] должен правильно интерполировать свойство name продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
@@ -84,7 +79,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     );
   });
 
-  it('тег с селектором .product-desc p.rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором [.product-desc p.rate-amount]  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
@@ -96,7 +91,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     );
   });
 
-  it('тег с селектором .product-desc span.rate-amount  должен правильно интерполировать свойство feedbacksCount продукта', () => {
+  it('тег с селектором [.product-desc span.rate-amount]  должен правильно интерполировать свойство feedbacksCount продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const prodNameEL = fixture.debugElement.query(
@@ -108,7 +103,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     );
   });
 
-  it('тег с селектором .product-desc .price-text strong должен правильно интерполировать  свойство price продукта', () => {
+  it('тег с селектором [.product-desc .price-text] strong должен правильно интерполировать  свойство price продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const { price } = (component as any)?.product;
@@ -119,7 +114,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     const priceValue = priceEl.nativeElement.textContent.trim();
     expect(priceValue).toEqual(`€${price.toString()}`);
   });
-  it('тег с селектором .counter__value должен правильно интерполировать свойство count продукта', () => {
+  it('тег с селектором [.counter__value] должен правильно интерполировать свойство count продукта', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const { count } = (component as any)?.product;
@@ -129,7 +124,7 @@ describe('[Moдуль 1 -  Компонент товара в корзин]', ()
     expect(countValue.toString()).toEqual(count.toString());
   });
 
-  it('тег с селектором .price должен правильно интерполировать результат перемножения cвойств price и count products', () => {
+  it('тег с селектором [.price] должен правильно интерполировать результат перемножения cвойств price и count products', () => {
     (component as any).product = cartProduct;
     fixture.detectChanges();
     const { price, count } = (component as any)?.product;

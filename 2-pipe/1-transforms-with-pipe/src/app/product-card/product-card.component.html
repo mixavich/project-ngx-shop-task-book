@@ -1,4 +1,4 @@
-<div class="card-component  go-to-product" (click)="redirectTo()">
+<div class="card-component go-to-product" (click)="redirectTo()">
   <div class="card-img-wrap pointer">
     <img
       loading="auto"
@@ -12,9 +12,9 @@
       {{ product.name }}
     </h5>
     <div>
-      <div>Рейтинг: {{product.rating | rate}}</div>
-      <p class="rate">
-      <p class="rate-amount ml-2">{{ product.feedbacksCount | review}}</p>
+      <div>Рейтинг: {{ product.rating | rate }}</div>
+      <p class="rate"></p>
+      <p class="rate-amount ml-2">{{ product.feedbacksCount | review }}</p>
       <p class="card-text price-text product-price">
         <strong>{{ product.price }}€</strong>
       </p>

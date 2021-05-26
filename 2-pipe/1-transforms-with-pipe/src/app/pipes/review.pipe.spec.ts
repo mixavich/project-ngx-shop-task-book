@@ -24,10 +24,16 @@ describe('[Moдуль 2 - review pipe]', () => {
     expect(reviewPipe.transform(111)).toEqual('111 отзывов');
   });
 
-  it('Eсли значение к которому применяется pipe число которое заканичвается на 11-14  pipe должен возвращать "${count} отзывов"', () => {
+  it('Eсли значение к которому применяется pipe число которое кратное 5 pipe должен возвращать "${count} отзывов"', () => {
     expect(reviewPipe.transform(5)).toEqual('5 отзывов');
     expect(reviewPipe.transform(15)).toEqual('15 отзывов');
     expect(reviewPipe.transform(25)).toEqual('25 отзывов');
     expect(reviewPipe.transform(115)).toEqual('115 отзывов');
+  });
+  it('Eсли значение к которому применяется pipe число заканчиваеться на 2 - 4  pipe должен возвращать "${count} отзыва"', () => {
+    expect(reviewPipe.transform(11)).toEqual('2 отзыва');
+    expect(reviewPipe.transform(12)).toEqual('34 отзыва');
+    expect(reviewPipe.transform(13)).toEqual('44 отзыва');
+    expect(reviewPipe.transform(14)).toEqual('93 отзыва');
   });
 });

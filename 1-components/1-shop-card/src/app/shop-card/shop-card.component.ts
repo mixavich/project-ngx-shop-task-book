@@ -1,9 +1,10 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, Output, EventEmitter} from '@angular/core';
 import {ICartProduct} from '../../../../../shared/mocks/1-components/cart-product';
 
 @Component({
   selector: 'app-shop-card',
   templateUrl: './shop-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class ShopCardComponent {

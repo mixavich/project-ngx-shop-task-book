@@ -1,9 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'ngx-shop-product-filter',
   templateUrl: './product-filter.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductFilterComponent implements OnInit {
   public selectedPrices: number[] = [];

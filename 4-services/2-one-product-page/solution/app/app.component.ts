@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../../../shared/mocks/4-services/products';
 import { ProductsService } from './services/products/products.service';
@@ -6,6 +6,7 @@ import { ProductsService } from './services/products/products.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
   public title = 'Компонент страницы продукта';

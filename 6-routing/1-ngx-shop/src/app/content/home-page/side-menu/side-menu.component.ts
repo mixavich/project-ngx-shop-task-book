@@ -1,10 +1,11 @@
 import { ICategory } from '../../../../../../../shared/mocks/6-routing/categories';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-shop-side-menu',
   templateUrl: './side-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
   @Input()

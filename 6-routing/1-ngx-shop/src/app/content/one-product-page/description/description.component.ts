@@ -1,8 +1,15 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 @Component({
   selector: 'ngx-shop-description',
   templateUrl: './description.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DescriptionComponent {
   @Input() public product: IProduct = null;

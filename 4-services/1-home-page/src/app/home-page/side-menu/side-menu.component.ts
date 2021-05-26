@@ -1,9 +1,16 @@
 import { ICategory } from './../../../../../../shared/mocks/4-services/categories';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'ngx-shop-side-menu',
   templateUrl: './side-menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
   @Input()

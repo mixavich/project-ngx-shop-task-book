@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
 
@@ -6,6 +12,7 @@ import { IProduct } from '../../../../../../../shared/mocks/6-routing/products';
   selector: 'ngx-shop-cart-product',
   templateUrl: './cart-product.component.html',
   styleUrls: ['./cart-product.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartProductComponent {
   @Input()
