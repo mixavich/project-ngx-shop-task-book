@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { oneProduct } from '../../../../shared/mocks/3-directives/product-information';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   public title = 'Компонент информации о товаре';

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICategory } from '../../../../../../shared/mocks/6-routing/categories';
 import { CategoriesService } from '../../services/category.service';
@@ -9,6 +9,7 @@ import { OnInit } from '@angular/core';
   selector: 'ngx-shop-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class HomePageComponent implements OnInit {

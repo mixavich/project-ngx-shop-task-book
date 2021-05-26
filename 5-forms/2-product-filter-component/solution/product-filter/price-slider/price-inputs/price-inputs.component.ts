@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Options } from 'ng5-slider';
 import {
   ControlValueAccessor,
@@ -16,6 +21,7 @@ import {
       multi: true,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PriceInputsComponent implements ControlValueAccessor, OnInit {
   @Input()

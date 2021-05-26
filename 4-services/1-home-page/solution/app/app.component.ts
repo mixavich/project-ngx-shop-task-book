@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICategory } from '../../../../shared/mocks/4-services/categories';
 import { IProduct } from '../../../../shared/mocks/4-services/products';
@@ -8,6 +8,7 @@ import { ProductsService } from './services/products/products.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class AppComponent implements OnInit {

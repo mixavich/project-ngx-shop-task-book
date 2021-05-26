@@ -14,33 +14,37 @@ describe('[Moдуль 1 - Header компонент]', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  it('компонент должен иметь cвойство counter со значение 5', () => {
+  it('компонент "header" должен иметь cвойство counter со значение 5', () => {
     expect((component as any).counter).toBeTruthy();
     expect((component as any).counter).toEqual(5);
   });
 
-  it('компонент должен иметь метод redirectTo', () => {
+  it('компонент "header" должен иметь метод redirectTo', () => {
     expect((component as any).redirectTo).toBeTruthy();
   });
 
-  it('компонент должен иметь cобственное событие goToBasket ', () => {
+  it('компонент "header" должен иметь cобственное событие goToBasket ', () => {
     expect((component as any).goToBasket).toBeTruthy();
     expect((component as any).goToBasket).toBeInstanceOf(EventEmitter);
   });
 
-  it('при нажатии на кнопку с селектором .basket.basket_not-empty должен вызываться метод  redirectTo и срабатывать собстевнное событие goToBasket', () => {
+  it('при нажатии на кнопку с селектором [.basket.basket_not-empty] должен вызываться метод  redirectTo и срабатывать собстевнное событие goToBasket', () => {
     spyOn(component as any, 'redirectTo').and.callThrough();
     spyOn((component as any)?.goToBasket, 'emit').and.callThrough();
-    const incrementButton = fixture.debugElement.query(By.css('.basket.basket_not-empty'));
+    const incrementButton = fixture.debugElement.query(
+      By.css('.basket.basket_not-empty')
+    );
     incrementButton.triggerEventHandler('click', null);
     expect((component as any)?.redirectTo).toHaveBeenCalledTimes(1);
     expect((component as any)?.goToBasket.emit).toHaveBeenCalledTimes(1);
   });
 
-  it('тег с селектором product-counter должен правильно интерполировать значение ', () => {
+  it('тег с селектором [product-counter] должен правильно интерполировать значение ', () => {
     const counterEl = fixture.debugElement.query(By.css('.product-counter'));
     const counterValue = counterEl.nativeElement.textContent.trim();
     expect(counterValue).toBeTruthy();
-    expect(counterValue.toString()).toEqual((component as any)?.counter?.toString());
+    expect(counterValue.toString()).toEqual(
+      (component as any)?.counter?.toString()
+    );
   });
 });

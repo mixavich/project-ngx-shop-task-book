@@ -1,5 +1,5 @@
 import { IProductApi } from './../../../../../../shared/mocks/6-routing/product-information';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'ngx-shop-category-page',
   templateUrl: './category-page.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryPageComponent implements OnInit {
   public categories$: Observable<ICategory[]> = null;

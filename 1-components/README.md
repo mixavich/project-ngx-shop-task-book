@@ -3,7 +3,7 @@
 Документация
 
 - [Ситаксис шаблонов](https://angular.io/guide/template-syntax)
-- [Передача данных в компонент](https://learn.javascript.ru/screencast/angular#components-input-data)
+- [Обмен данными между дочерними и родительскими директивами и компонентами](https://angular.io/guide/inputs-outputs)
 
 Cкринкасты
 

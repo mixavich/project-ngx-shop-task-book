@@ -1,9 +1,16 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { ICartProduct } from '../../../../shared/mocks/1-components/cart-product';
 
 @Component({
   selector: 'app-shop-card',
   templateUrl: './shop-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class ShopCardComponent {
@@ -25,5 +32,4 @@ export class ShopCardComponent {
   public decrementProductInCart(): void {
     this.decrement.emit();
   }
-
 }

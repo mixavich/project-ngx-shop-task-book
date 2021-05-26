@@ -1,4 +1,9 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -11,6 +16,7 @@ import {
   selector: 'ngx-shop-order-form',
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderFormComponent {
   @Output()

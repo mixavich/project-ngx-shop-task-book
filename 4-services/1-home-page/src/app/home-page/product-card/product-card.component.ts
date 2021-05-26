@@ -1,8 +1,15 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'ngx-shop-product-card',
   templateUrl: './product-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 // @ts-ignore
 export class ProductCardComponent {
