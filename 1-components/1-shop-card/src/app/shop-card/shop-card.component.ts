@@ -17,11 +17,11 @@ export class ShopCardComponent {
   @Output()
   public decrement = new EventEmitter();
 
-  public incrementProductInCart() {
+  public incrementProductInCart(): void {
     this.increment.emit();
   }
 
-  public decrementProductInCart() {
+  public decrementProductInCart(): void {
     this.decrement.emit();
   }
 }
